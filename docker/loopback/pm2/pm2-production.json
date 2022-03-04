@@ -1,0 +1,26 @@
+{
+    "apps": [
+        {
+            "name"        : "api",
+            "script"      : "dist/index.js",
+            "instances"   : 2,
+            "exec_mode"   : "cluster",
+            "watch"       : false,
+            "merge_logs"  : true,
+            "cwd"         : "/app/www/api/",
+            "env_production" : {
+                "NODE_ENV": "production" ,
+                "INSTANCE": "production",
+
+                "HOST": "0.0.0.0",
+                "PORT": 3001,
+
+                "MYSQL_HOST": "mysql.dev.docker",
+                "MYSQL_PORT": 3306,
+                "MYSQL_USER": "root",
+                "MYSQL_PASSWORD": "root",
+                "MYSQL_DATABASE": "dev_cursoaws"
+            }
+        }
+    ]
+}
